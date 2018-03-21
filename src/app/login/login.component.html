@@ -1,0 +1,17 @@
+<div>
+  <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+    <fieldset ngModelGroup="login">
+      <div>
+        <input name="username" placeholder="username" [(ngModel)]="username" type="text" #usernameRef="ngModel" required minlength="2" maxlength="10" />
+        <div *ngIf="usernameRef.errors?.required">this is required</div>
+        <div *ngIf="usernameRef.errors?.minlength">should be at least 2 charactors</div>
+      </div>
+      <div>
+        <input name="password" placeholder="password" [(ngModel)]="password" type="text" #passwordRef="ngModel" required/>
+      </div>
+      <div>
+        <button type="submit">Login</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
