@@ -1,5 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*@import "~@angular/material/prebuilt-themes/indigo-pink.css";*/
+@import '~@angular/material/_theming';
+@include mat-core();
+$custom-primary: mat-palette($mat-deep-purple);
+$custom-accent:  mat-palette($mat-pink);
+
+$custom-theme: mat-light-theme($custom-primary, $custom-accent);
+
+@include angular-material-theme($custom-theme);
+
 /* You can add global styles to this file, and also import other style files */
 html, body {
     margin: 0;
@@ -25,8 +34,8 @@ body {
     line-height: 1.4em;
     background: #f5f5f5;
     color: #4d4d4d;
-    min-width: 230px;
-    max-width: 850px;
+    min-width: 850px;
+    // max-width: 850px;
     margin: 0 auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -56,3 +65,5 @@ body {
 .info a:hover {
     text-decoration: underline;
 }
+
+

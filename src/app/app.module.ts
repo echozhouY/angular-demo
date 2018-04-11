@@ -5,48 +5,12 @@ import { HttpModule } from '@angular/http'
 
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import {CdkTableModule} from '@angular/cdk/table';
-
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes} from '@angular/router';
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-} from '@angular/material';
-import { LoginComponent } from './login/login.component';
+import { LoginModule, DemoMaterialModule } from './login/login.module';
 import { AuthService } from './core/auth.service';
 import { routing } from './app.routes';
 import { TodoComponent } from './todo/todo.component';
@@ -57,7 +21,7 @@ import { HeroService} from './heroes/hero.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageService } from './message.service';
 import { MessageComponent } from './message/message.component';
-import { DemoComponent } from './demo/demo.component';
+import { NavbarComponent } from './navbar/navbar.component';
 // const appRoutes:Routes = [
 //   {path: '', redirectTo: 'home', pathMatch: 'full'},
 //   {path: 'home', component: HomeComponent},
@@ -66,64 +30,24 @@ import { DemoComponent } from './demo/demo.component';
 // ]
 
 @NgModule({
-  exports: [
-    CdkTableModule,
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatStepperModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-  ],
-  declarations: []
-})
-export class DemoMaterialModule {}
-
-@NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    LoginComponent,
     TodoComponent,
     TodoFooterComponent,
     HeroesComponent,
     HeroDetailComponent,
     DashboardComponent,
     MessageComponent,
-    DemoComponent
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     HttpModule,
+    LoginModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
